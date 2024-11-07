@@ -1,0 +1,258 @@
+sql [2024-09-24 00:01:07] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:01:07] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:01:07] [DEBUG] Executing (default): SELECT `id`, `name`, `count`, `order`, `isValid`, `createdAt`, `updatedAt` FROM `blogType` AS `BlogType` ORDER BY `BlogType`.`order` ASC; 
+
+sql [2024-09-24 00:01:16] [DEBUG] Executing (default): SELECT count(`Blog`.`id`) AS `count` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:01:16] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:01:18] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:01:18] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:01:24] [DEBUG] Executing (default): SELECT count(`Blog`.`id`) AS `count` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:01:24] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:02:09] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:02:09] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:02:11] [DEBUG] Executing (default): SELECT count(`Blog`.`id`) AS `count` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:02:11] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:02:13] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:02:13] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:03:01] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:03:01] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:03:01] [DEBUG] Executing (default): SELECT `id`, `name`, `count`, `order`, `isValid`, `createdAt`, `updatedAt` FROM `blogType` AS `BlogType` ORDER BY `BlogType`.`order` ASC; 
+
+sql [2024-09-24 00:03:10] [DEBUG] Executing (default): SELECT count(`Blog`.`id`) AS `count` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:03:10] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:03:12] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:03:12] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:04:04] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:04:04] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:04:04] [DEBUG] Executing (default): SELECT `id`, `name`, `count`, `order`, `isValid`, `createdAt`, `updatedAt` FROM `blogType` AS `BlogType` ORDER BY `BlogType`.`order` ASC; 
+
+sql [2024-09-24 00:04:07] [DEBUG] Executing (default): SELECT count(`Blog`.`id`) AS `count` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:04:07] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:04:42] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:04:42] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:04:42] [DEBUG] Executing (default): SELECT `id`, `name`, `count`, `order`, `isValid`, `createdAt`, `updatedAt` FROM `blogType` AS `BlogType` ORDER BY `BlogType`.`order` ASC; 
+
+sql [2024-09-24 00:04:44] [DEBUG] Executing (default): SELECT count(`Blog`.`id`) AS `count` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:04:44] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:04:47] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:04:47] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:05:35] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '2'; 
+
+sql [2024-09-24 00:05:35] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '2'; 
+
+sql [2024-09-24 00:05:35] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '2'; 
+
+sql [2024-09-24 00:05:35] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:11:33] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:11:33] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:11:33] [DEBUG] Executing (default): SELECT `id`, `name`, `count`, `order`, `isValid`, `createdAt`, `updatedAt` FROM `blogType` AS `BlogType` ORDER BY `BlogType`.`order` ASC; 
+
+sql [2024-09-24 00:11:42] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '3'; 
+
+sql [2024-09-24 00:11:42] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '3'; 
+
+sql [2024-09-24 00:11:42] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:11:42] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '3'; 
+
+sql [2024-09-24 00:12:23] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '3'; 
+
+sql [2024-09-24 00:12:23] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '3'; 
+
+sql [2024-09-24 00:12:23] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:12:23] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '3'; 
+
+sql [2024-09-24 00:13:49] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '4'; 
+
+sql [2024-09-24 00:13:49] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '4'; 
+
+sql [2024-09-24 00:13:49] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:13:49] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '4'; 
+
+sql [2024-09-24 00:16:56] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '5'; 
+
+sql [2024-09-24 00:16:56] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '5'; 
+
+sql [2024-09-24 00:16:56] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:16:56] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '5'; 
+
+sql [2024-09-24 00:19:15] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '6'; 
+
+sql [2024-09-24 00:19:15] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '6'; 
+
+sql [2024-09-24 00:19:15] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '6'; 
+
+sql [2024-09-24 00:19:15] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:21:06] [DEBUG] Executing (default): SELECT count(`BlogJP`.`id`) AS `count` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:21:06] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` INNER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:21:06] [DEBUG] Executing (default): SELECT `id`, `name`, `count`, `order`, `isValid`, `createdAt`, `updatedAt` FROM `blogType` AS `BlogType` ORDER BY `BlogType`.`order` ASC; 
+
+sql [2024-09-24 00:24:19] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '1'; 
+
+sql [2024-09-24 00:24:19] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '1'; 
+
+sql [2024-09-24 00:24:19] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:24:19] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '1'; 
+
+sql [2024-09-24 00:26:21] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '1'; 
+
+sql [2024-09-24 00:26:21] [DEBUG] Executing (default): UPDATE `blog` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:26:41] [DEBUG] Executing (default): SELECT `BlogJP`.`id`, `BlogJP`.`title`, `BlogJP`.`description`, `BlogJP`.`toc`, `BlogJP`.`htmlContent`, `BlogJP`.`isValid`, `BlogJP`.`thumb`, `BlogJP`.`scanNumber`, `BlogJP`.`commentNumber`, `BlogJP`.`createDate`, `BlogJP`.`createdAt`, `BlogJP`.`updatedAt`, `BlogJP`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog_jp` AS `BlogJP` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `BlogJP`.`blogType` = `categoryInfo`.`id` WHERE `BlogJP`.`id` = '1'; 
+
+sql [2024-09-24 00:26:41] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '1'; 
+
+sql [2024-09-24 00:26:41] [DEBUG] Executing (default): UPDATE `blog_jp` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:26:41] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '1'; 
+
+sql [2024-09-24 00:26:54] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '1'; 
+
+sql [2024-09-24 00:26:54] [DEBUG] Executing (default): UPDATE `blog` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:27:44] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '2'; 
+
+sql [2024-09-24 00:27:44] [DEBUG] Executing (default): UPDATE `blog` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:28:55] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '3'; 
+
+sql [2024-09-24 00:28:55] [DEBUG] Executing (default): UPDATE `blog` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:29:19] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '4'; 
+
+sql [2024-09-24 00:29:19] [DEBUG] Executing (default): UPDATE `blog` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:29:45] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '5'; 
+
+sql [2024-09-24 00:29:45] [DEBUG] Executing (default): UPDATE `blog` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:30:14] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '6'; 
+
+sql [2024-09-24 00:30:14] [DEBUG] Executing (default): UPDATE `blog` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:31:03] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` IS NULL; 
+
+sql [2024-09-24 00:31:55] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` IS NULL; 
+
+sql [2024-09-24 00:31:55] [DEBUG] Executing (default): SELECT count(*) AS `count` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:31:55] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y' LIMIT 0, 10; 
+
+sql [2024-09-24 00:32:07] [DEBUG] Executing (default): SELECT count(*) AS `count` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:32:07] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y' LIMIT 0, 10; 
+
+sql [2024-09-24 00:34:04] [DEBUG] Executing (default): SELECT count(*) AS `count` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:34:04] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`isValid` = 'Y' LIMIT 0, 10; 
+
+sql [2024-09-24 00:35:12] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`id` = '1' AND `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:35:12] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` LEFT OUTER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` WHERE `Blog`.`id` = '1'; 
+
+sql [2024-09-24 00:35:12] [DEBUG] Executing (default): UPDATE `project` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:35:12] [DEBUG] Executing (default): SELECT `id`, `nickName`, `content`, `avatar`, `isValid`, `createdAt`, `updatedAt`, `blogId` FROM `message` AS `MessageModel` WHERE `MessageModel`.`blogId` = '1'; 
+
+sql [2024-09-24 00:35:41] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`id` = '1' AND `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:35:41] [DEBUG] Executing (default): UPDATE `project` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:36:05] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`id` = '2' AND `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:36:05] [DEBUG] Executing (default): UPDATE `project` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:36:19] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`id` = '3' AND `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:36:19] [DEBUG] Executing (default): UPDATE `project` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:36:35] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`id` = '4' AND `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:36:35] [DEBUG] Executing (default): UPDATE `project` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:36:50] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`id` = '5' AND `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:36:50] [DEBUG] Executing (default): UPDATE `project` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:37:03] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`id` = '6' AND `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:37:03] [DEBUG] Executing (default): UPDATE `project` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:37:31] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`id` = '6' AND `ProjectJP`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:37:31] [DEBUG] Executing (default): UPDATE `project_JP` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:37:46] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`id` = '5' AND `ProjectJP`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:37:46] [DEBUG] Executing (default): UPDATE `project_JP` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:38:08] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`id` = '4' AND `ProjectJP`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:38:08] [DEBUG] Executing (default): UPDATE `project_JP` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:38:30] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`id` = '3' AND `ProjectJP`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:38:30] [DEBUG] Executing (default): UPDATE `project_JP` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:38:46] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`id` = '2' AND `ProjectJP`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:38:46] [DEBUG] Executing (default): UPDATE `project_JP` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:39:04] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project_JP` AS `ProjectJP` WHERE `ProjectJP`.`id` = '1' AND `ProjectJP`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:39:04] [DEBUG] Executing (default): UPDATE `project_JP` SET `scanNumber`=?,`updatedAt`=? WHERE `id` = ? 
+
+sql [2024-09-24 00:41:37] [DEBUG] Executing (default): SELECT count(*) AS `count` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:41:37] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y' LIMIT 0, 10; 
+
+sql [2024-09-24 00:41:38] [DEBUG] Executing (default): SELECT count(*) AS `count` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y'; 
+
+sql [2024-09-24 00:41:38] [DEBUG] Executing (default): SELECT `id`, `title`, `description`, `toc`, `htmlContent`, `isValid`, `thumb`, `scanNumber`, `commentNumber`, `createDate`, `createdAt`, `updatedAt` FROM `project` AS `Project` WHERE `Project`.`isValid` = 'Y' LIMIT 0, 10; 
+
+sql [2024-09-24 00:41:38] [DEBUG] Executing (default): SELECT count(`Blog`.`id`) AS `count` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id`; 
+
+sql [2024-09-24 00:41:38] [DEBUG] Executing (default): SELECT `Blog`.`id`, `Blog`.`title`, `Blog`.`description`, `Blog`.`toc`, `Blog`.`htmlContent`, `Blog`.`isValid`, `Blog`.`thumb`, `Blog`.`scanNumber`, `Blog`.`commentNumber`, `Blog`.`createDate`, `Blog`.`createdAt`, `Blog`.`updatedAt`, `Blog`.`blogType`, `categoryInfo`.`id` AS `categoryInfo.id`, `categoryInfo`.`name` AS `categoryInfo.name`, `categoryInfo`.`count` AS `categoryInfo.count`, `categoryInfo`.`order` AS `categoryInfo.order`, `categoryInfo`.`isValid` AS `categoryInfo.isValid`, `categoryInfo`.`createdAt` AS `categoryInfo.createdAt`, `categoryInfo`.`updatedAt` AS `categoryInfo.updatedAt` FROM `blog` AS `Blog` INNER JOIN `blogType` AS `categoryInfo` ON `Blog`.`blogType` = `categoryInfo`.`id` LIMIT 0, 10; 
+
+sql [2024-09-24 00:41:38] [DEBUG] Executing (default): SELECT `id`, `name`, `count`, `order`, `isValid`, `createdAt`, `updatedAt` FROM `blogType` AS `BlogType` ORDER BY `BlogType`.`order` ASC; 
+
