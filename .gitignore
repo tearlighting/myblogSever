@@ -1,4 +1,4 @@
 *.7z
 node_modules
 /client
-/logs
+logs
