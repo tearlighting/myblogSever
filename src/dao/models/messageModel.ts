@@ -31,6 +31,7 @@ const messageSetting = setModel({
   },
   options: {
     tableName: "message",
+    freezeTableName: true, // 防止 Sequelize 自动修改表名
   },
 })
 

@@ -37,5 +37,6 @@ export const homeSetting = setModel({
   },
   options: {
     tableName: "banner",
+    freezeTableName: true,
   },
 })

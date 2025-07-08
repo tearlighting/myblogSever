@@ -37,6 +37,7 @@ const AdminSetting = setModel({
   },
   options: {
     freezeTableName: true,
+    tableName: "admin",
   },
 })
 

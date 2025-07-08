@@ -57,6 +57,7 @@ export const ProjectSetting_JP = setModel({
     },
   },
   options: {
-    tableName: "project_JP",
+    tableName: "project_jp",
+    freezeTableName: true,
   },
 })

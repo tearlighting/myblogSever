@@ -58,5 +58,6 @@ export const ProjectSetting = setModel({
   },
   options: {
     tableName: "project",
+    freezeTableName: true,
   },
 })

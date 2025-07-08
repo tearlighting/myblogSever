@@ -33,6 +33,7 @@ export const blogTypeSetting = setModel({
     },
   },
   options: {
-    tableName: "blogType",
+    tableName: "blogtype",
+    freezeTableName: true,
   },
 })
