@@ -27,6 +27,7 @@
     "markdown-it-iframe": "^1.0.0",
     "markdown-toc": "^1.2.0",
     "md5": "^2.3.0",
+    "multer": "^2.0.2",
     "mysql2": "^3.11.0",
     "path-to-regexp": "^7.1.0",
     "reflect-metadata": "^0.2.2",
