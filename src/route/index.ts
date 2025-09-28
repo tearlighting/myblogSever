@@ -1,15 +1,18 @@
-import express, { Router } from "express"
+import "express-async-errors"
+
+import path from "node:path"
+
+import cookieParser from "cookie-parser"
+import express from "express"
+import session from "express-session"
+
 import { EPort } from "./config"
 // import session from 'express-session'
 import { authorizationMiddleWare } from "./middleWare/authorization"
-import cookieParser from "cookie-parser"
-
-import { useRouters } from "./routers"
-import { errorHandler } from "./middleWare/errorhandler"
-import path from "node:path"
 import cors from "./middleWare/cors"
-import session from "express-session"
-import "express-async-errors"
+import { errorHandler } from "./middleWare/errorhandler"
+import { useRouters } from "./routers"
+
 const serverApp = express()
 
 serverApp.use(cors())
@@ -17,6 +20,7 @@ serverApp.use(cors())
 serverApp.use(cookieParser())
 
 serverApp.use("/static", express.static(path.resolve(__dirname, "../../client")))
+serverApp.use("/uploads", express.static(path.resolve(__dirname, "../../uploads")))
 
 // const r = express.Router()
 // r.get("/api/blog", (request, response, next) => {

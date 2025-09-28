@@ -5,15 +5,15 @@ const { registerRouter } = useRoutes({
   routerItems: [
     {
       method: "post",
-      url: "/upload",
+      url: "/imgs",
       async handler(request, response) {
-        return createUploadHandler("imgs")(request, response)
+        return createUploadHandler("uploads/imgs")(request, response)
       },
       canCORS: true,
       needAuth: true,
     },
   ],
-  baseUrl: "/api/upload/imgs",
+  baseUrl: "/api/upload",
 })
 
 export { registerRouter }

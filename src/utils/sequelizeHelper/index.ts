@@ -12,11 +12,11 @@ class SequelizeHelper {
   private _sequelize: Sequelize
   private _connectedModels: Set<typeof Model> = new Set()
   private constructor({ user, password, database, host, dialect }: ISequelizeHelperInit) {
-    this._sequelize = new Sequelize(database, user, password, {
-      host,
-      dialect,
-      logging: (err) => logHelper.sqlLogger.debug(err),
-    })
+		this._sequelize = new Sequelize(database, user, password, {
+		host,
+		dialect,
+		logging: (err) => logHelper.sqlLogger.debug(err),
+		})
   }
   get instance() {
     return this._sequelize

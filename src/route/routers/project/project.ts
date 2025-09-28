@@ -29,7 +29,7 @@ const { registerRouter } = useRoutes({
       url: "/detail/:id",
       async handler(request) {
         console.log(request.params, request.query)
-        return projectServiceInstance.getBlogById({ ...request.params, ...request.query } as any)
+        return projectServiceInstance.getProjectById({ ...request.params, ...request.query } as any)
       },
       canCORS: true,
     },

@@ -1,8 +1,13 @@
-interface IAdmin {
-  id: string | number
+interface IBaseModel {
+  id: string
+  readonly createdAt: Date
+  readonly updatedAt: Date
+}
+
+interface IAdmin extends IBaseModel {
   loginId: string
   name: string
   loginPwd: string
-  isValid: "Y" | "N"
   role: string
+  isValid: "Y" | "N"
 }

@@ -29,6 +29,15 @@ const { registerRouter } = useRoutes({
         return homeServiceInstance.updateBanners(request.body)
       },
     },
+    {
+      method: "delete",
+      url: "/",
+      canCORS: true,
+      needAuth: true,
+      async handler(request) {
+        return homeServiceInstance.deleteBanner(request.body)
+      },
+    },
   ],
   baseUrl: "/api/home/banner",
 })

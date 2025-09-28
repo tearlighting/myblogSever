@@ -1,7 +1,7 @@
-import { messageDaoInstance } from "@/dao/messageDao"
+import { messageDaoInstance } from "@/dao/message/BlogMessageDao"
 import { messageServiceInstance } from "@/service/messageService"
 
-const message: Partial<IMessage> = {
+const message: Partial<IBlogMessage> = {
   nickName: "nickName",
   content: "conntent",
   avatar: "avatar",

@@ -1,6 +1,6 @@
 import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
 import { ProjectObjectValidate, ProjectPagenation } from "./validate/project"
-import { projectDaoInstance } from "@/dao/projectDao"
+import { projectDaoInstance } from "@/dao/project/projectDao"
 import { string2Toc, toc2String } from "@/utils/custom/toc"
 import { htmlContent2String, string2HtmlContent } from "@/utils/custom/htmlContent"
 import { formatterDate } from "@/utils/custom"
@@ -15,16 +15,21 @@ class ProjectService {
       total: res.count,
       rows: res.rows
         .map((v) => {
-          const { id, title, description, scanNumber, commentNumber, createDate, toc, htmlContent } = v.dataValues as IProject
+          const { id, scanNumber, commentNumber } = v.toJSON()
+          const transactions = v.transactions.map((v) => {
+            const { title, description, toc, htmlContent } = v.toJSON()
+            return {
+              title,
+              description,
+              toc: string2Toc(toc),
+              htmlContent: string2HtmlContent(htmlContent),
+            }
+          })
           return {
             id,
-            title,
-            description,
             scanNumber,
             commentNumber,
-            createDate,
-            toc: string2Toc(toc),
-            htmlContent: string2HtmlContent(htmlContent),
+            transactions,
           }
         })
         .sort((x, y) => Number(x.id) - Number(y.id)),
@@ -33,40 +38,40 @@ class ProjectService {
   @FuncIntercepter()
   async addProject(
     @ParamType(ProjectObjectValidate)
-    { scanNumber = "0", createDate = formatterDate(), commentNumber = "0", thumb, description, toc, htmlContent, title, type = "zh" }: Partial<IProjectObject> & Partial<ILanguage>
+    { scanNumber = "0", commentNumber = "0", thumb }: Pick<IProject, "scanNumber" | "commentNumber" | "thumb">
   ) {
     const newPro = await projectDaoInstance.addProject({
       scanNumber,
-      createDate,
       commentNumber,
       thumb,
-      description,
-      toc: toc2String({ toc }),
-      htmlContent: htmlContent2String({ htmlContent }),
-      title,
-      type,
     })
     if (!newPro) {
       return false
     }
     return true
   }
-  async getBlogById({ id, type = "zh" }: Partial<IBlog> & Partial<ILanguage>) {
+  async getProjectById({ id, type = "zh" }: Partial<IBlog> & Partial<ILanguage>) {
     if (!id) {
       throw new ValidateError("id dont exist")
     }
     const res = await projectDaoInstance.getProjectById({ id, type })
     try {
-      const { id, title, description, scanNumber, commentNumber, createDate, toc, htmlContent } = res.dataValues as IProject
+      const { id, scanNumber, commentNumber, thumb } = res.toJSON()
+      const transactions = res.transactions.map((v) => {
+        const { title, description, toc, htmlContent } = v.toJSON()
+        return {
+          title,
+          description,
+          toc: string2Toc(toc),
+          htmlContent: string2HtmlContent(htmlContent),
+        }
+      })
       return {
         id,
-        title,
-        description,
+        thumb,
         scanNumber,
         commentNumber,
-        createDate,
-        toc: string2Toc(toc),
-        htmlContent: string2HtmlContent(htmlContent),
+        transactions,
       }
     } finally {
       let scanNumber = Number(res.dataValues.scanNumber)

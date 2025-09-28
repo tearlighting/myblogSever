@@ -1,5 +1,4 @@
-interface IBanner {
-  id: string
+interface IHome extends IBaseModel {
   img: string
   placeHolderImg: string
   title: string

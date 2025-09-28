@@ -1,5 +1,4 @@
-import { AdminDaoInstance } from "@/dao/adminDao"
-import { Admin } from "@/dao/models/adminModel"
+import { AdminDaoInstance } from "@/dao/admin/AdminDao"
 import { ValidateError } from "@/utils/errorHelper"
 import JWTHelperIns from "@/utils/jwtHelper"
 import { ParamType, FuncIntercepter } from "@/hooks/useClassFunIntercepter"

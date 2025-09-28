@@ -1,4 +1,4 @@
-import { Admin } from "./models/adminModel"
+import { Admin } from "../models"
 class AdminDao {
   async queryUser({ loginId, loginPwd }: Pick<IAdmin, "loginId" | "loginPwd">) {
     return await Admin.findOne({
@@ -9,7 +9,7 @@ class AdminDao {
       },
     })
   }
-  async updateUser(newInfo: Partial<IAdmin>, where: Partial<IAdmin>) {
+  async updateUser(newInfo: Partial<IAdmin>, where: Pick<IAdmin, "id">) {
     return await Admin.update(newInfo, {
       where,
     })

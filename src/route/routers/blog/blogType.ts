@@ -15,12 +15,10 @@ const { registerRouter } = useRoutes({
       method: "post",
       url: "/",
       async handler(request) {
-        console.log(request.body)
-
         return blogTypeServiceInstance.updateBlogTypes(request.body)
       },
       canCORS: true,
-      //   needAuth: true,
+      needAuth: true,
     },
     {
       method: "put",
@@ -30,6 +28,13 @@ const { registerRouter } = useRoutes({
       },
       canCORS: true,
       needAuth: true,
+    },
+    {
+      method: "delete",
+      url: "/",
+      async handler(request) {
+        return blogTypeServiceInstance.deleteBlogType(request.body)
+      },
     },
   ],
   baseUrl: "/api/blog/blogType",

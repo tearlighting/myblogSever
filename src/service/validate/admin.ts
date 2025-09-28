@@ -1,7 +1,7 @@
 import { IsString, Length } from "class-validator"
 
 class AdminValidate implements IAdmin {
-  id: string | number
+  id: string
   @Length(1, 20, {
     groups: ["checkUserValid"],
   })
@@ -22,6 +22,8 @@ class AdminValidate implements IAdmin {
   loginPwd: string
   isValid: "Y" | "N"
   role: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 export { AdminValidate }

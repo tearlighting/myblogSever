@@ -1,5 +1,6 @@
 import fs from "fs"
 import path from "path"
+
 interface IWrite2FileParam {
   abPath?: string
   data: object
@@ -19,7 +20,7 @@ export function useResponseData2File() {
     const res = JSON.stringify(data)
     fs.writeFile(
       abPath,
-      Buffer.from(formatter2MD({ data: res, description })),
+      (Buffer.from as any)(formatter2MD({ data: res, description }) as any),
       {
         flag: "a",
         encoding: "utf-8",

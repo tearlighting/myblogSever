@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString } from "class-validator"
 
-class MessageValidate implements IMessage {
+class MessageValidate implements Omit<IBlogMessage, keyof IBaseModel> {
   @IsNotEmpty()
   @IsString()
   nickName: string
@@ -11,7 +11,7 @@ class MessageValidate implements IMessage {
   @IsString()
   avatar: string
   isValid: "Y" | "N"
-  blogId?: string
+  blogId: string
 }
 
 export { MessageValidate }

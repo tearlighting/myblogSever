@@ -1,18 +1,25 @@
+import { dbIns } from "../../db"
 import { setModel } from "@/utils/sequelizeHelper"
-import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize"
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model, NonAttribute } from "sequelize"
 
-export class Home extends Model<InferAttributes<Home, { omit: "id" }>, InferCreationAttributes<Home, { omit: "id" }>> implements IBanner {
+export class Home extends Model<InferAttributes<Home>, InferCreationAttributes<Home>> implements IHome {
   declare id: CreationOptional<string>
   declare isValid: "Y" | "N"
   declare img: string
   declare placeHolderImg: string
   declare title: string
   declare description: string
+  declare readonly createdAt: NonAttribute<Date> // 自动维护
+  declare readonly updatedAt: NonAttribute<Date> // 自动维护
 }
 
-export const homeSetting = setModel({
-  model: Home,
-  attributes: {
+Home.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4, // Sequelize 自动生成 v4 UUID
+      primaryKey: true,
+    },
     isValid: {
       type: DataTypes.STRING(1),
       allowNull: false,
@@ -35,8 +42,9 @@ export const homeSetting = setModel({
       allowNull: false,
     },
   },
-  options: {
-    tableName: "banner",
+  {
+    sequelize: dbIns.sequelize,
+    tableName: "home",
     freezeTableName: true,
-  },
-})
+  }
+)

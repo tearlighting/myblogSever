@@ -1,21 +1,24 @@
-interface IBlogType {
-  id: string
+interface IBlogType extends IBaseModel {
   name: string
   count: number
   order: number
   isValid: "Y" | "N"
 }
 
-interface IBlog {
-  id: string
+interface IBlog extends IBaseModel {
+  thumb: string
+  scanNumber: string
+  commentNumber: string
+  isValid: "Y" | "N"
+  blogTypeId: string
+}
+
+interface IBlogTranslation extends IBaseModel {
   title: string
   description: string
   toc: string
   htmlContent: string
-  thumb: string
-  scanNumber: string
-  commentNumber: string
-  createDate: string
+  lang: string
+  blogId: string
   isValid: "Y" | "N"
-  blogType: string
 }

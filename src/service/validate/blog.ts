@@ -2,7 +2,7 @@ import { HtmlContentValidate } from "@/utils/custom/htmlContent"
 import { TocValidate } from "@/utils/custom/toc"
 import { IsNotEmpty, IsNumber, IsNumberString, IsString, Length, Validate, ValidateNested } from "class-validator"
 
-class BlogTypeValidate implements IBlogType {
+class BlogTypeValidate implements Omit<IBlogType, keyof IBaseModel> {
   id: string
   @Length(1)
   @IsString()

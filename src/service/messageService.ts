@@ -1,13 +1,13 @@
 import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
 import { MessageValidate } from "./validate/message"
-import { blogDaoInstance } from "@/dao/blogDao"
+import { blogDaoInstance } from "@/dao/blog/BlogDao"
 import { ValidateError } from "@/utils/errorHelper"
-import { messageDaoInstance } from "@/dao/messageDao"
+import { messageDaoInstance } from "@/dao/message/BlogMessageDao"
 import { formatterDate } from "@/utils/custom"
 
 class MessageService {
   @FuncIntercepter()
-  async addMessage(@ParamType(MessageValidate) { nickName, content, avatar, blogId }: IMessage) {
+  async addMessage(@ParamType(MessageValidate) { nickName, content, avatar, blogId }: IBlogMessage) {
     if (blogId) {
       const blog = await blogDaoInstance.getBlogById({ id: blogId })
       if (!blog) {
@@ -20,7 +20,7 @@ class MessageService {
     const res = await messageDaoInstance.addMessage({ nickName, content, avatar, blogId })
     return res.dataValues
   }
-  async getMessages({ blogId, page, limit }: IMessage & { page: number; limit: number }) {
+  async getMessages({ blogId, page, limit }: IBlogMessage & { page: number; limit: number }) {
     //获取文章评论
     if (blogId) {
       const blog = await blogDaoInstance.getBlogById({ id: blogId })
