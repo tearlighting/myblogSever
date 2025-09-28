@@ -1,4 +1,5 @@
 *.7z
-node_modules
-/client
-logs
+node_modules/
+/client/
+/logs/
+/uploads/
