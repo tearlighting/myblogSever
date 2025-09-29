@@ -4,6 +4,12 @@ import { Blog, BlogTranslation, BlogType } from "../models"
 class BlogDao {
   getPagenationBlogs({ id, page, limit }: BlogPagenation) {
     return Blog.findAndCountAll({
+      distinct: true,
+
+      col: "id",
+      where: {
+        isValid: "Y",
+      },
       include: [
         {
           model: BlogType,
@@ -23,6 +29,7 @@ class BlogDao {
           where: {
             isValid: "Y",
           },
+          required: false,
         },
       ],
       offset: (+page - 1) * +limit,
@@ -42,6 +49,7 @@ class BlogDao {
     return Blog.findOne({
       where: {
         id,
+        isValid: "Y",
       },
       include: [
         {
@@ -57,11 +65,13 @@ class BlogDao {
           where: {
             isValid: "Y",
           },
+          required: false,
         },
       ],
     })
   }
   async updateBlog(id: string, payload: Partial<Omit<IBlog, keyof IBaseModel>>) {
+    console.log(payload)
     return Blog.update(payload, {
       where: {
         id,

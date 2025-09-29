@@ -8,8 +8,6 @@ const { registerRouter } = useRoutes({
       method: "get",
       url: "/",
       async handler(request) {
-        // console.log(request.query)
-
         return blogServiceInstance.getBlogsPagenation(request.query as any)
       },
       canCORS: true,
@@ -21,7 +19,25 @@ const { registerRouter } = useRoutes({
         return blogServiceInstance.addBlog(request.body)
       },
       canCORS: true,
-      //   needAuth: true
+      needAuth: true,
+    },
+    {
+      method: "put",
+      url: "/",
+      async handler(request) {
+        return blogServiceInstance.updateBlog(request.body)
+      },
+      canCORS: true,
+      needAuth: true,
+    },
+    {
+      method: "delete",
+      url: "/",
+      async handler(request) {
+        return blogServiceInstance.deleteBlog(request.body)
+      },
+      canCORS: true,
+      needAuth: true,
     },
     {
       method: "get",

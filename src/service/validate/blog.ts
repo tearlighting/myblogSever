@@ -14,30 +14,18 @@ class BlogTypeValidate implements Omit<IBlogType, keyof IBaseModel> {
   isValid: "Y" | "N"
 }
 
-class BlogObjectValidate implements IBlogObject {
+class BlogObjectValidate implements Partial<IBlog> {
   blogType: string
   //   @ValidateNested()
-  toc: TOC[]
-  @IsString()
-  @IsNotEmpty()
-  htmlContent: string
 
   id?: string
   @Length(1)
   @IsString()
-  title?: string
-  @Length(1)
-  @IsString()
-  description?: string
-  @Length(1)
-  @IsString()
   thumb?: string
-  @IsNumberString()
   scanNumber?: string
-  @Length(1)
-  @IsString()
   commentNumber?: string
-  createDate?: string
+  blogTypeId: string
+
   isValid?: "Y" | "N"
 }
 class BlogPagenation {

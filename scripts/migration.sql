@@ -115,3 +115,13 @@ FROM (
     ON e.`name` = f.`name`
   WHERE blogtype IS NOT NULL
 ) m;
+
+/* -------------------------------
+   Step 4: update img path
+   Source: blog 
+   Target: blog 
+-------------------------------- */
+
+UPDATE blog 
+set thumb=REPLACE(thumb,'/img','/uploads/imgs') 
+WHERE thumb LIKE '/img%'

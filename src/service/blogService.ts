@@ -79,31 +79,70 @@ class BlogService {
   @FuncIntercepter()
   async addBlog(
     @ParamType(BlogObjectValidate)
-    { blogType, scanNumber = "0", commentNumber = "0", thumb }: Partial<IBlogObject> & Partial<ILanguage>
+    { blogTypeId, scanNumber = "0", commentNumber = "0", thumb }: Pick<IBlog, "blogTypeId" | "scanNumber" | "commentNumber" | "thumb">
   ) {
     //暂时验证没有处理异步的数据，blogType手动验证存不存在
     // blog
-    const res = await blogTypeDaoInstance.getBlogTypeById({ id: blogType })
-    if (!res) {
-      throw new ValidateError(`blogType ${blogType} is not exist`)
+    const res = await blogTypeDaoInstance.getBlogTypeById({ id: blogTypeId })
+    if (!res?.toJSON) {
+      throw new ValidateError(`blogType ${blogTypeId} is not exist`)
     }
     const newBlog = await blogDaoInstance.addBlog({
-      blogTypeId: blogType,
+      blogTypeId,
       scanNumber,
       commentNumber,
       thumb,
-      //   toc: toc2String({ toc }),
-      //   htmlContent: htmlContent2String({ htmlContent }),
-      //   title,
-      //   type,
     })
     if (newBlog) {
       res.count++
       await res.save()
     }
-    return true
+    return res.toJSON()
   }
-  async getBlogById({ id, type = "zh" }: Partial<IBlog> & Partial<ILanguage>) {
+  async updateBlog({ blogTypeId, scanNumber, commentNumber, thumb, id }: Pick<IBlog, "blogTypeId" | "scanNumber" | "commentNumber" | "thumb" | "id">) {
+    try {
+      const blogType = await blogTypeDaoInstance.getBlogTypeById({ id: blogTypeId }).catch((e) => {
+        throw new ValidateError(`blogType ${blogTypeId} is not exist`)
+      })
+
+      if (!blogType?.toJSON) {
+        throw new ValidateError(`blogType ${blogTypeId} is not exist`)
+      }
+      const blogRaw = await blogDaoInstance.getBlogById({ id })
+      const { blogTypeId: blogTypeIdRaw } = blogRaw.toJSON()
+      //不是同一个blogType，要更新文章数量
+      if (blogTypeIdRaw !== blogTypeId) {
+        const blogTypeRaw = await blogTypeDaoInstance.getBlogTypeById({ id: blogTypeIdRaw })
+        blogTypeRaw.count--
+        blogType.count++
+        await blogTypeRaw.save()
+        await blogType.save()
+      }
+      await blogDaoInstance.updateBlog(id, { blogTypeId, scanNumber, commentNumber, thumb })
+      return true
+    } catch (e) {
+      throw e
+    }
+  }
+  async deleteBlog({ id }: Pick<IBlog, "id">) {
+    try {
+      console.log(id)
+
+      const blog = await blogDaoInstance.getBlogById({ id })
+      if (!blog?.toJSON) {
+        throw new ValidateError("blog dont exist")
+      }
+      const blogType = await blogTypeDaoInstance.getBlogTypeById({ id: blog.blogTypeId })
+      blogType.count--
+      await blogType.save()
+      await blogDaoInstance.deleteBlog(id)
+    } catch (e) {
+      console.log(e)
+
+      throw e
+    }
+  }
+  async getBlogById({ id }: Partial<IBlog>) {
     if (!id) {
       throw new ValidateError("id dont exist")
     }
