@@ -142,7 +142,7 @@ export async function initProjects() {
 
   setTimeout(() => {
     res.forEach((x) => {
-      projectServiceInstance.addProject(x)
+      projectServiceInstance.createProject(x)
     })
   }, 5000)
 }
@@ -172,7 +172,7 @@ export async function initProjectsJP() {
 
   setTimeout(() => {
     res.forEach((x) => {
-      projectServiceInstance.addProject(x)
+      projectServiceInstance.createProject(x)
     })
   }, 5000)
 }

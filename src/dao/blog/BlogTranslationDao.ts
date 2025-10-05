@@ -1,7 +1,7 @@
 import { BlogTranslation } from "../models"
 
 class BlogTranslationDao {
-  createBlogTranslation({ lang, title, description, blogId, toc, htmlContent }: Omit<IBlogTranslation, "isValid" | "id">) {
+  createBlogTranslation({ lang, title, description, blogId, toc, htmlContent }: Omit<IBlogTranslation, keyof IBaseModel | "isValid">) {
     return BlogTranslation.create({
       lang,
       title,

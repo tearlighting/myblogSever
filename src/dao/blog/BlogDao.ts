@@ -37,7 +37,7 @@ class BlogDao {
       order: [["updatedAt", "DESC"]],
     })
   }
-  async addBlog({ blogTypeId: blogTypeId, scanNumber, commentNumber, thumb }: Omit<IBlog, keyof IBaseModel | "isValid">) {
+  async createBlog({ blogTypeId: blogTypeId, scanNumber, commentNumber, thumb }: Omit<IBlog, keyof IBaseModel | "isValid">) {
     return Blog.create({
       blogTypeId: blogTypeId,
       scanNumber,

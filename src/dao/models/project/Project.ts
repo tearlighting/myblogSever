@@ -15,7 +15,7 @@ export class Project
   declare scanNumber: string
   declare commentNumber: string
   declare isValid: "Y" | "N"
-  declare transactions: NonAttribute<ProjectTranslation[]> // 自动维护
+  declare translations: NonAttribute<ProjectTranslation[]> // 自动维护
   declare readonly createdAt: NonAttribute<Date> // 自动维护
   declare readonly updatedAt: NonAttribute<Date> // 自动维护
 }

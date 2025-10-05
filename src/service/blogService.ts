@@ -4,7 +4,7 @@ import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
 import { BlogTypeValidate, BlogObjectValidate, BlogPagenation } from "./validate/blog"
 import { string2Toc, toc2String } from "@/utils/custom/toc"
 import { htmlContent2String, string2HtmlContent } from "@/utils/custom/htmlContent"
-import { formatterDate } from "@/utils/custom"
+import { handleMarkdown } from "@/utils/markdownHelper"
 
 class BlogTypeService {
   async getBlogTypes() {
@@ -77,7 +77,7 @@ class BlogService {
     }
   }
   @FuncIntercepter()
-  async addBlog(
+  async createBlog(
     @ParamType(BlogObjectValidate)
     { blogTypeId, scanNumber = "0", commentNumber = "0", thumb }: Pick<IBlog, "blogTypeId" | "scanNumber" | "commentNumber" | "thumb">
   ) {
@@ -87,7 +87,7 @@ class BlogService {
     if (!res?.toJSON) {
       throw new ValidateError(`blogType ${blogTypeId} is not exist`)
     }
-    const newBlog = await blogDaoInstance.addBlog({
+    const newBlog = await blogDaoInstance.createBlog({
       blogTypeId,
       scanNumber,
       commentNumber,
@@ -147,6 +147,7 @@ class BlogService {
       throw new ValidateError("id dont exist")
     }
     const res = await blogDaoInstance.getBlogById({ id })
+
     try {
       const { id, scanNumber, commentNumber } = res.toJSON()
       const category = res.category.toJSON()
@@ -161,7 +162,7 @@ class BlogService {
           lang,
         }
       })
-      return {
+      const result = {
         id,
         scanNumber,
         commentNumber,
@@ -171,14 +172,43 @@ class BlogService {
         },
         translations,
       }
+      return result
+    } catch (e) {
+      throw e
     } finally {
       let scanNumber = Number(res.dataValues.scanNumber)
       res.scanNumber = (++scanNumber).toString()
-      //   console.log(res.scanNumber)
-
       res.save()
     }
   }
 }
 
 export const blogServiceInstance = new BlogService()
+
+class BlogTranslationService {
+  async updateBlogTranslation({ id, markdownContent, title, description }: Pick<IBlogTranslation, "id" | "title" | "description"> & { markdownContent: string }) {
+    try {
+      const translationRow = await blogTranslationDaoInstance.getBlogTranslation(id)
+      if (!translationRow?.toJSON) {
+        throw new ValidateError("translation not exist")
+      }
+      const { toc, htmlContent } = handleMarkdown(markdownContent)
+      await blogTranslationDaoInstance.updateBlogTranslation(id, { toc, htmlContent, title, description })
+      return true
+    } catch (e) {
+      throw e
+    }
+  }
+
+  async createBlogTranslation({ title, description, blogId, lang, markdownContent }: Pick<IBlogTranslation, "lang" | "blogId" | "title" | "description"> & { markdownContent: string }) {
+    try {
+      const { toc, htmlContent } = handleMarkdown(markdownContent)
+      await blogTranslationDaoInstance.createBlogTranslation({ toc, htmlContent, title, description, blogId, lang })
+      return true
+    } catch (e) {
+      throw e
+    }
+  }
+}
+
+export const blogTranslationServiceInstance = new BlogTranslationService()

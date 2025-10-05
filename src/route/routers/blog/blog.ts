@@ -16,7 +16,7 @@ const { registerRouter } = useRoutes({
       method: "post",
       url: "/",
       async handler(request) {
-        return blogServiceInstance.addBlog(request.body)
+        return blogServiceInstance.createBlog(request.body)
       },
       canCORS: true,
       needAuth: true,

@@ -16,7 +16,7 @@ class HomeDao {
       },
     })
   }
-  setBanners({ id, img, placeHolderImg, title, description }: Partial<IHome>) {
+  updateBanner({ id, img, placeHolderImg, title, description }: Partial<IHome>) {
     return Home.update(
       { img, placeHolderImg, title, description },
       {
@@ -27,7 +27,7 @@ class HomeDao {
       }
     )
   }
-  addBanner({ img, placeHolderImg, title, description }: Partial<IHome>) {
+  createBanner({ img, placeHolderImg, title, description }: Partial<IHome>) {
     return Home.create({
       img,
       placeHolderImg,

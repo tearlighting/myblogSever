@@ -3,26 +3,29 @@ import { Project, ProjectTranslation } from "../models"
 import { ProjectPagenation } from "@/service/validate/project"
 
 class ProjectDao {
-  async getPagenationProjects({ page, limit, type = "zh" }: ProjectPagenation & Partial<ILanguage>) {
+  async getPagenationProjects({ page, limit }: ProjectPagenation & Partial<ILanguage>) {
     return Project.findAndCountAll({
+      distinct: true,
+      col: "id",
       offset: (+page - 1) * +limit,
       limit: +limit,
       where: {
         isValid: "Y",
       },
-      order: [["createDate", "DESC"]],
+      order: [["updatedAt", "DESC"]],
       include: [
         {
           model: ProjectTranslation,
           as: "translations",
+          required: false,
           where: {
-            lang: type,
+            isValid: "Y",
           },
         },
       ],
     })
   }
-  async addProject({ scanNumber, commentNumber, thumb }: Omit<IProject, keyof IBaseModel | "isValid">) {
+  async createProject({ scanNumber, commentNumber, thumb }: Omit<IProject, keyof IBaseModel | "isValid">) {
     return Project.create({
       scanNumber,
       //   createDate,
@@ -34,7 +37,35 @@ class ProjectDao {
       //   title,
     })
   }
-  async getProjectById({ id, type = "zh" }: Pick<IProject, "id"> & Partial<ILanguage>) {
+  async updateProject({ id, scanNumber, commentNumber, thumb }: Pick<IProject, "id" | "commentNumber" | "scanNumber" | "thumb">) {
+    Project.update(
+      {
+        scanNumber,
+        commentNumber,
+        thumb,
+      },
+      {
+        where: {
+          id,
+          isValid: "Y",
+        },
+      }
+    )
+  }
+  async deleteProject({ id }: Pick<IProject, "id">) {
+    Project.update(
+      {
+        isValid: "N",
+      },
+      {
+        where: {
+          id,
+          isValid: "Y",
+        },
+      }
+    )
+  }
+  async getProjectById({ id }: Pick<IProject, "id">) {
     return Project.findOne({
       where: {
         id,
@@ -42,10 +73,11 @@ class ProjectDao {
       },
       include: [
         {
+          required: false,
           model: ProjectTranslation,
           as: "translations",
           where: {
-            lang: type,
+            isValid: "Y",
           },
         },
       ],

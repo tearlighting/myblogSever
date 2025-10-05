@@ -1,16 +1,12 @@
 import { useRoutes } from "@/hooks/useRoutes"
 import { projectServiceInstance } from "@/service/projectService"
 
-import { Request, Response } from "express"
-
 const { registerRouter } = useRoutes({
   routerItems: [
     {
       method: "get",
       url: "/",
       async handler(request) {
-        // console.log(request.query)
-
         return projectServiceInstance.getProjectsPagenation(request.query as any)
       },
       canCORS: true,
@@ -19,10 +15,17 @@ const { registerRouter } = useRoutes({
       method: "post",
       url: "/",
       async handler(request) {
-        return projectServiceInstance.addProject(request.body)
+        return projectServiceInstance.createProject(request.body)
       },
       canCORS: true,
-      //   needAuth: true
+      needAuth: true,
+    },
+    {
+      method: "put",
+      url: "/",
+      async handler(request) {
+        return projectServiceInstance.updateProject(request.body)
+      },
     },
     {
       method: "get",

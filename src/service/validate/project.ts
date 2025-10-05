@@ -8,29 +8,29 @@ export class ProjectPagenation {
   limit: number | string
 }
 
-export class ProjectObjectValidate implements IProjectObject {
-  blogType: string
+export class ProjectObjectValidate implements Partial<IProjectObject> {
+  //   blogType: string
   //   @ValidateNested()
-  toc: TOC[]
-  @IsString()
-  @IsNotEmpty()
-  htmlContent: string
+  //   toc: TOC[]
+  //   @IsString()
+  //   @IsNotEmpty()
+  //   htmlContent: string
 
   id?: string
-  @Length(1)
-  @IsString()
-  title?: string
-  @Length(1)
-  @IsString()
-  description?: string
+  //   @Length(1)
+  //   @IsString()
+  //   title?: string
+  //   @Length(1)
+  //   @IsString()
+  //   description?: string
   @Length(1)
   @IsString()
   thumb?: string
-  @IsNumberString()
-  scanNumber?: string
-  @Length(1)
-  @IsString()
-  commentNumber?: string
-  createDate?: string
-  isValid?: "Y" | "N"
+  //   @IsNumberString()
+  //   scanNumber?: string
+  //   @Length(1)
+  //   @IsString()
+  //   commentNumber?: string
+  //   createDate?: string
+  //   isValid?: "Y" | "N"
 }

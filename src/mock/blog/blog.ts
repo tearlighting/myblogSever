@@ -9,7 +9,7 @@ import { blogServiceInstance } from "@/service/blogService"
 
 // const { markdownitAnchorCallback, getToc, initalToc } = useMDTOC()
 
-const blogs: Array<Partial<IBlogObject> & Partial<ILanguage> & Record<"filePath", string>> = [
+const blogs: Array<any & Partial<ILanguage> & Record<"filePath", string>> = [
   {
     blogType: "65",
     thumb: "/img/CSS.png",
@@ -66,7 +66,7 @@ const blogs: Array<Partial<IBlogObject> & Partial<ILanguage> & Record<"filePath"
   },
 ]
 
-const blogsJp: Array<Partial<IBlogObject> & Partial<ILanguage> & Record<"filePath", string>> = [
+const blogsJp: Array<any & Partial<ILanguage> & Record<"filePath", string>> = [
   {
     blogType: "65",
     thumb: "/img/CSS.png",
@@ -146,14 +146,13 @@ export async function initBlogs() {
       x.toc = await deepCopy(toc)
       x.htmlContent = html
       ;(x.scanNumber = "0"), (x.commentNumber = "0")
-      console.log(x)
       return x
     })
   )
 
   setTimeout(() => {
     res.forEach((x) => {
-      blogServiceInstance.addBlog(x)
+      blogServiceInstance.createBlog(x)
     })
   }, 5000)
 }
@@ -183,7 +182,7 @@ export async function initBlogsJP() {
 
   setTimeout(() => {
     res.forEach((x) => {
-      blogServiceInstance.addBlog(x)
+      blogServiceInstance.createBlog(x)
     })
   }, 5000)
 }

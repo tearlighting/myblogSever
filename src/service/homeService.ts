@@ -18,13 +18,13 @@ class HomeService {
   async updateBanner({ id, img, placeHolderImg, title, description }: IHome) {
     const row = (await homeDaoInstance.getBannersById({ id }))?.getDataValue
     if (row) {
-      return homeDaoInstance.setBanners({ id, img, placeHolderImg, title, description })
+      return homeDaoInstance.updateBanner({ id, img, placeHolderImg, title, description })
     } else {
       throw new ValidateError(`delete item dont exist`)
     }
   }
-  async addBanner({ img, placeHolderImg, title, description }: Partial<IHome>) {
-    return homeDaoInstance.addBanner({ img, placeHolderImg, title, description })
+  async createBanner({ img, placeHolderImg, title, description }: Partial<IHome>) {
+    return homeDaoInstance.createBanner({ img, placeHolderImg, title, description })
   }
   async updateBanners(arr: IHome[] | IHome) {
     const normalized = Array.isArray(arr) ? arr : [arr]
@@ -33,7 +33,7 @@ class HomeService {
         if (item.id) {
           return this.updateBanner(item)
         }
-        return this.addBanner(item)
+        return this.createBanner(item)
       })
     )
   }
