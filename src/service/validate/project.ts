@@ -1,5 +1,4 @@
 import { IsNotEmpty, IsNumberString, IsString, Length } from "class-validator"
-import { BlogPagenation, TOC } from "./blog"
 
 export class ProjectPagenation {
   @IsNumberString()
@@ -8,7 +7,7 @@ export class ProjectPagenation {
   limit: number | string
 }
 
-export class ProjectObjectValidate implements Partial<IProjectObject> {
+export class ProjectObjectValidate {
   //   blogType: string
   //   @ValidateNested()
   //   toc: TOC[]

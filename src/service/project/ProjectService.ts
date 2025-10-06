@@ -1,10 +1,9 @@
 import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
-import { ProjectObjectValidate, ProjectPagenation } from "./validate/project"
-import { projectDaoInstance } from "@/dao/project/projectDao"
-import { string2Toc, toc2String } from "@/utils/custom/toc"
-import { htmlContent2String, string2HtmlContent } from "@/utils/custom/htmlContent"
-import { formatterDate } from "@/utils/custom"
-import { ValidateError } from "@/utils/errorHelper"
+import { ProjectObjectValidate, ProjectPagenation } from "../validate/project"
+import { projectDaoInstance } from "@/dao/project"
+import { UnknownError, ValidateError } from "@/utils/errorHelper"
+import { string2Toc } from "@/utils/custom/toc"
+import { string2HtmlContent } from "@/utils/custom/htmlContent"
 
 class ProjectService {
   @FuncIntercepter()
@@ -29,22 +28,25 @@ class ProjectService {
     @ParamType(ProjectObjectValidate)
     { scanNumber = "0", commentNumber = "0", thumb }: Pick<IProject, "scanNumber" | "commentNumber" | "thumb">
   ) {
-    const newPro = await projectDaoInstance.createProject({
-      scanNumber,
-      commentNumber,
-      thumb,
-    })
-    if (!newPro) {
-      return false
+    try {
+      const newPro = await projectDaoInstance.createProject({
+        scanNumber,
+        commentNumber,
+        thumb,
+      })
+      if (!newPro?.toJSON) {
+        throw new UnknownError("create project error")
+      }
+    } catch (e) {
+      throw e
     }
-    return true
   }
   async getProjectById({ id }: Pick<IProject, "id">) {
-    if (!id) {
-      throw new ValidateError("id dont exist")
-    }
     const res = await projectDaoInstance.getProjectById({ id })
     try {
+      if (!res?.toJSON) {
+        throw new ValidateError("id dont exist")
+      }
       const { id, scanNumber, commentNumber, thumb } = res.toJSON()
       const transactions = res.translations.map((v) => {
         const { title, description, toc, htmlContent } = v.toJSON()
@@ -62,6 +64,8 @@ class ProjectService {
         commentNumber,
         transactions,
       }
+    } catch (e) {
+      throw e
     } finally {
       let scanNumber = Number(res.dataValues.scanNumber)
       res.scanNumber = (++scanNumber).toString()

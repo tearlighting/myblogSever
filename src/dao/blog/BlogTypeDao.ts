@@ -33,7 +33,7 @@ export class BlogTypeDao {
       }
     )
   }
-  insertBlogType({ name, count, order }: Pick<IBlogType, "name" | "count" | "order">) {
+  createBlogType({ name, count, order }: Pick<IBlogType, "name" | "count" | "order">) {
     return BlogType.create({
       name,
       count,

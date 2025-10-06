@@ -1,8 +1,8 @@
-export function toc2String({ toc }: Partial<IBlogObject>) {
+export function toc2String({ toc }: { toc: ITOC[] }) {
   return JSON.stringify(toc)
 }
 
-export function string2Toc(value: string): IBlogObject["toc"] {
+export function string2Toc(value: string): ITOC[] {
   return JSON.parse(value)
 }
 
@@ -10,7 +10,7 @@ import { ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface 
 
 @ValidatorConstraint({ name: "TocValidate", async: false })
 export class TocValidate implements ValidatorConstraintInterface {
-  validate(value: Partial<IBlogObject>["toc"], validationArguments?: ValidationArguments): boolean {
+  validate(value: ITOC[], validationArguments?: ValidationArguments): boolean {
     // console.log(value, validationArguments, "???")
     if (value) {
       return true

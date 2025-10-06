@@ -52,4 +52,4 @@ class BlogMessageDao {
   }
 }
 
-export const messageDaoInstance = new BlogMessageDao()
+export const blogMessageDaoInstance = new BlogMessageDao()

@@ -1,6 +1,5 @@
 import { useRoutes } from "@/hooks/useRoutes"
-import { blogServiceInstance } from "@/service/blogService"
-import { Request, Response } from "express"
+import { blogServiceInstance } from "@/service"
 
 const { registerRouter } = useRoutes({
   routerItems: [

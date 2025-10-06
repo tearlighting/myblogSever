@@ -1,8 +1,8 @@
 import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
-import { MessageValidate } from "./validate/message"
-import { blogDaoInstance } from "@/dao/blog/BlogDao"
+import { MessageValidate } from "../validate/message"
+import { blogDaoInstance } from "@/dao/blog"
 import { ValidateError } from "@/utils/errorHelper"
-import { messageDaoInstance } from "@/dao/message/BlogMessageDao"
+import { blogMessageDaoInstance } from "@/dao/message"
 import { formatterDate } from "@/utils/custom"
 
 class MessageService {
@@ -17,7 +17,7 @@ class MessageService {
       blog.commentNumber = (commentNumber++).toString()
       await blog.save()
     }
-    const res = await messageDaoInstance.addMessage({ nickName, content, avatar, blogId })
+    const res = await blogMessageDaoInstance.addMessage({ nickName, content, avatar, blogId })
     return res.dataValues
   }
   async getMessages({ blogId, page, limit }: IBlogMessage & { page: number; limit: number }) {
@@ -28,7 +28,7 @@ class MessageService {
         throw new ValidateError(`blogId ${blogId} dont exist`)
       }
       if (!page || !limit) {
-        const res = await messageDaoInstance.getAllMessages({ blogId })
+        const res = await blogMessageDaoInstance.getAllMessages({ blogId })
         return {
           total: res.length,
           rows: res.map((x) => {
@@ -37,13 +37,13 @@ class MessageService {
           }),
         }
       } else {
-        return messageDaoInstance.getPagenationMessages({ blogId, page, limit })
+        return blogMessageDaoInstance.getPagenationMessages({ blogId, page, limit })
       }
 
       //获取网站留言
     } else {
       if (!page || !limit) {
-        const res = await messageDaoInstance.getAllMessages()
+        const res = await blogMessageDaoInstance.getAllMessages()
         return {
           total: res.length,
           rows: res.map((x) => {
@@ -52,7 +52,7 @@ class MessageService {
           }),
         }
       } else {
-        return messageDaoInstance.getPagenationMessages({ page, limit })
+        return blogMessageDaoInstance.getPagenationMessages({ page, limit })
       }
     }
   }

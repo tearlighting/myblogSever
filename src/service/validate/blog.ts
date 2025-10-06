@@ -1,5 +1,3 @@
-import { HtmlContentValidate } from "@/utils/custom/htmlContent"
-import { TocValidate } from "@/utils/custom/toc"
 import { IsNotEmpty, IsNumber, IsNumberString, IsString, Length, Validate, ValidateNested } from "class-validator"
 
 class BlogTypeValidate implements Omit<IBlogType, keyof IBaseModel> {
@@ -8,7 +6,6 @@ class BlogTypeValidate implements Omit<IBlogType, keyof IBaseModel> {
   @IsString()
   name: string
   count: number
-
   @IsNumber()
   order: number
   isValid: "Y" | "N"
@@ -30,7 +27,7 @@ class BlogObjectValidate implements Partial<IBlog> {
 }
 class BlogPagenation {
   @IsNotEmpty()
-  id: string | number
+  id: string
   @IsNumberString()
   page: number | string
   @IsNumberString()

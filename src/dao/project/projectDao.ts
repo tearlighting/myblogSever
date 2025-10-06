@@ -1,9 +1,8 @@
-import { BlogPagenation } from "@/service/validate/blog"
 import { Project, ProjectTranslation } from "../models"
 import { ProjectPagenation } from "@/service/validate/project"
 
 class ProjectDao {
-  async getPagenationProjects({ page, limit }: ProjectPagenation & Partial<ILanguage>) {
+  async getPagenationProjects({ page, limit }: ProjectPagenation) {
     return Project.findAndCountAll({
       distinct: true,
       col: "id",

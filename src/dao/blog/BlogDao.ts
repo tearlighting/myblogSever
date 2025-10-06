@@ -5,7 +5,6 @@ class BlogDao {
   getPagenationBlogs({ id, page, limit }: BlogPagenation) {
     return Blog.findAndCountAll({
       distinct: true,
-
       col: "id",
       where: {
         isValid: "Y",
@@ -16,7 +15,7 @@ class BlogDao {
           as: "category",
           where: {
             isValid: "Y",
-            ...(+id === -1
+            ...(!id
               ? {}
               : {
                   id,

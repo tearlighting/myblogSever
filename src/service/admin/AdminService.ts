@@ -1,9 +1,9 @@
-import { AdminDaoInstance } from "@/dao/admin/AdminDao"
-import { ValidateError } from "@/utils/errorHelper"
-import JWTHelperIns from "@/utils/jwtHelper"
-import { ParamType, FuncIntercepter } from "@/hooks/useClassFunIntercepter"
-import { AdminValidate } from "./validate/admin"
+import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
+import { AdminValidate } from "../validate/admin"
+import { AdminDaoInstance } from "@/dao/admin"
 import md5 from "md5"
+import JWTHelperIns from "@/utils/jwtHelper"
+import { ValidateError } from "@/utils/errorHelper"
 
 class AdminService {
   /**
@@ -15,10 +15,10 @@ class AdminService {
   async isUserValidate(@ParamType(AdminValidate) { loginId, loginPwd }: Partial<IAdmin>) {
     loginPwd = md5(loginPwd)
     const res = await AdminDaoInstance.queryUser({ loginId, loginPwd })
-    if (res && res.dataValues) {
-      return { res: true, row: res.dataValues }
+    if (!res?.toJSON) {
+      return { res: false }
     }
-    return { res: false }
+    return { res: true, row: res.toJSON() }
   }
   /**
    * set Authorization header
@@ -32,19 +32,22 @@ class AdminService {
   }
   @FuncIntercepter()
   async updateUserPwd<T extends IUpdateUserPwd>(@ParamType(AdminValidate) { loginId, loginPwd, oldPwd, name }: T) {
-    const { res, row } = await this.isUserValidate({ loginId, loginPwd: oldPwd })
-    if (res && row) {
-      // console.log(row);
-      const { id } = row as IAdmin
-      return await AdminDaoInstance.updateUser(
-        {
-          loginPwd: md5(loginPwd),
-          name,
-        },
-        { id }
-      )
-    } else {
-      throw new ValidateError("old password error")
+    try {
+      const { res, row } = await this.isUserValidate({ loginId, loginPwd: oldPwd })
+      if (res && row) {
+        const { id } = row as IAdmin
+        return await AdminDaoInstance.updateUser(
+          {
+            loginPwd: md5(loginPwd),
+            name,
+          },
+          { id }
+        )
+      } else {
+        throw new ValidateError("old password error")
+      }
+    } catch (e) {
+      throw e
     }
   }
 }

@@ -1,5 +1,5 @@
 import { useRoutes } from "@/hooks/useRoutes"
-import { adminServiceInstance } from "@/service/adminService"
+import { adminServiceInstance } from "@/service"
 import { UnknownError, ValidateError } from "@/utils/errorHelper"
 
 const routerItems: IRouterItem[] = [

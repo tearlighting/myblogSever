@@ -3,13 +3,15 @@ import { useReadMD } from "@/hooks/useReaderMarkDown"
 import markdownit from "markdown-it"
 import anchor from "markdown-it-anchor"
 import { useMDTOC } from "@/hooks/useMarkDownToc"
-import { projectServiceInstance } from "@/service/projectService"
+import { projectServiceInstance } from "@/service"
 
-// const { reader, write2File } = useReadMD(path.resolve(__dirname, "../client/md/css3.md"))
-
-// const { markdownitAnchorCallback, getToc, initalToc } = useMDTOC()
-
-const project: Array<Partial<IProjectObject> & Partial<ILanguage> & Record<"filePath", string>> = [
+type IConfig = Partial<IProject> &
+  Omit<Partial<IProjectTranslation>, "toc"> &
+  Partial<ILanguage> &
+  Record<"filePath", string> & {
+    toc?: ITOC[] | string | null
+  }
+const project: IConfig[] = [
   {
     thumb: "/img/firstVue.gif",
     description: "使用vue做的第一个看板",
@@ -60,7 +62,7 @@ const project: Array<Partial<IProjectObject> & Partial<ILanguage> & Record<"file
   },
 ]
 
-const projectJp: Array<Partial<IProjectObject> & Partial<ILanguage> & Record<"filePath", string>> = [
+const projectJp: IConfig[] = [
   {
     thumb: "/img/firstVue.gif",
     description: "Vue を使用して作成された最初のかんばんボード",
@@ -142,7 +144,7 @@ export async function initProjects() {
 
   setTimeout(() => {
     res.forEach((x) => {
-      projectServiceInstance.createProject(x)
+      projectServiceInstance.createProject({ thumb: x.thumb!, scanNumber: x.scanNumber!, commentNumber: x.commentNumber! })
     })
   }, 5000)
 }
@@ -172,7 +174,11 @@ export async function initProjectsJP() {
 
   setTimeout(() => {
     res.forEach((x) => {
-      projectServiceInstance.createProject(x)
+      projectServiceInstance.createProject({
+        thumb: x.thumb!,
+        scanNumber: x.scanNumber!,
+        commentNumber: x.commentNumber!,
+      })
     })
   }, 5000)
 }

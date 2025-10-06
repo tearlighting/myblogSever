@@ -1,5 +1,5 @@
 import { useRoutes } from "@/hooks/useRoutes"
-import { messageServiceInstance } from "@/service/messageService"
+import { messageServiceInstance } from "@/service"
 
 const { registerRouter } = useRoutes({
   routerItems: [

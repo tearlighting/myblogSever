@@ -1,5 +1,5 @@
 import { useRoutes } from "@/hooks/useRoutes"
-import { blogTranslationServiceInstance } from "@/service"
+import { projectTranslationServiceInstance } from "@/service"
 
 const { registerRouter } = useRoutes({
   routerItems: [
@@ -7,7 +7,7 @@ const { registerRouter } = useRoutes({
       method: "post",
       url: "/",
       async handler(request) {
-        return blogTranslationServiceInstance.createBlogTranslation(request.body)
+        return projectTranslationServiceInstance.createProjectTranslation(request.body)
       },
       canCORS: true,
       needAuth: true,
@@ -16,7 +16,7 @@ const { registerRouter } = useRoutes({
       method: "put",
       url: "/",
       async handler(request) {
-        return blogTranslationServiceInstance.updateBlogTranslation(request.body)
+        return projectTranslationServiceInstance.updateProjectTranslation(request.body)
       },
       canCORS: true,
       needAuth: true,
