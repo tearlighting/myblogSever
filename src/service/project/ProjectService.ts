@@ -48,13 +48,15 @@ class ProjectService {
         throw new ValidateError("id dont exist")
       }
       const { id, scanNumber, commentNumber, thumb } = res.toJSON()
-      const transactions = res.translations.map((v) => {
-        const { title, description, toc, htmlContent } = v.toJSON()
+      const translations = res.translations.map((v) => {
+        const { title, description, toc, htmlContent, lang, id } = v.toJSON()
         return {
+          id,
           title,
           description,
           toc: string2Toc(toc),
           htmlContent: string2HtmlContent(htmlContent),
+          lang,
         }
       })
       return {
@@ -62,7 +64,7 @@ class ProjectService {
         thumb,
         scanNumber,
         commentNumber,
-        transactions,
+        translations,
       }
     } catch (e) {
       throw e

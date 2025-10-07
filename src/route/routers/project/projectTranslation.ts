@@ -22,7 +22,7 @@ const { registerRouter } = useRoutes({
       needAuth: true,
     },
   ],
-  baseUrl: "/api/blog/blogTranslation",
+  baseUrl: "/api/project/projectTranslation",
 })
 
 export { registerRouter }

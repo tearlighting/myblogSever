@@ -1,6 +1,8 @@
 import { RouterHelper } from "@/utils/routerHelper"
-import { registerRouter } from "./project"
+import { registerRouter as registerProjectRouter } from "./project"
+import { registerRouter as registerProjectTranslationRouter } from "./projectTranslation"
 
 export function registerProject(RouterHelperInstance: RouterHelper) {
-  registerRouter(RouterHelperInstance)
+  registerProjectRouter(RouterHelperInstance)
+  registerProjectTranslationRouter(RouterHelperInstance)
 }

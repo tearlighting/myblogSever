@@ -20,8 +20,8 @@ class ProjectTranslationService {
   async createProjectTranslation({ title, description, projectId, lang, markdownContent }: Pick<IProjectTranslation, "lang" | "projectId" | "title" | "description"> & { markdownContent: string }) {
     try {
       const { toc, htmlContent } = handleMarkdown(markdownContent)
-      await projectTranslationDaoInstance.createBlogTranslation({ toc, htmlContent, title, description, projectId, lang })
-      return true
+      const row = await projectTranslationDaoInstance.createBlogTranslation({ toc, htmlContent, title, description, projectId, lang })
+      return row.toJSON()
     } catch (e) {
       throw e
     }

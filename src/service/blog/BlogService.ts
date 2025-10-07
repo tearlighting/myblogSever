@@ -16,6 +16,8 @@ class BlogService {
           throw new ValidateError(`blogType ${id} is not exist`)
         }
       }
+      console.log(id, page, limit)
+
       const res = await blogDaoInstance.getPagenationBlogs({ id, page, limit })
 
       return {

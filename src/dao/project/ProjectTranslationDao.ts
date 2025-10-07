@@ -1,13 +1,14 @@
 import { ProjectTranslation } from "../models"
 
 class ProjectTranslationDao {
-  createBlogTranslation({ lang, title, description, toc, htmlContent }: Omit<IProjectTranslation, keyof IBaseModel | "isValid">) {
+  createBlogTranslation({ lang, title, description, toc, htmlContent, projectId }: Omit<IProjectTranslation, keyof IBaseModel | "isValid">) {
     return ProjectTranslation.create({
       lang,
       title,
       description,
       toc,
       htmlContent,
+      projectId,
     })
   }
   updateBlogTranslation(id: string, payload: Partial<Omit<IProjectTranslation, "isValid" | "id">>) {

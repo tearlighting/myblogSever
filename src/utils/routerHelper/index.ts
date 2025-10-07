@@ -10,12 +10,16 @@ export class RouterHelper {
   private _routerCache: Record<string, IRouterItem[]> = {}
   private constructor(private _app: Express) {}
   registerRouter(baseUrl: string, router: Router, routerItems: IRouterItem[]) {
-    if (this._routerCache[baseUrl]) {
-      throw new Error("this baseUrl has been used")
+    try {
+      if (this._routerCache[baseUrl]) {
+        throw new Error("this baseUrl has been used>>>" + baseUrl)
+      }
+      this.addRouters(router, routerItems)
+      this._app.use(baseUrl, router)
+      this._routerCache[baseUrl] = routerItems
+    } catch (e) {
+      console.log(e)
     }
-    this.addRouters(router, routerItems)
-    this._app.use(baseUrl, router)
-    this._routerCache[baseUrl] = routerItems
   }
   private addRouters(router: Router, routerItems: IRouterItem[]) {
     routerItems.forEach((item) => {

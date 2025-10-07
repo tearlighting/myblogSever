@@ -26,7 +26,7 @@ class BlogObjectValidate implements Partial<IBlog> {
   isValid?: "Y" | "N"
 }
 class BlogPagenation {
-  @IsNotEmpty()
+  //   @IsNotEmpty()
   id: string
   @IsNumberString()
   page: number | string

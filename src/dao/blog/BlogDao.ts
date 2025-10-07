@@ -3,6 +3,16 @@ import { Blog, BlogTranslation, BlogType } from "../models"
 
 class BlogDao {
   getPagenationBlogs({ id, page, limit }: BlogPagenation) {
+    console.log(id, page, limit)
+
+    console.log({
+      ...(!id
+        ? {}
+        : {
+            id,
+          }),
+    })
+
     return Blog.findAndCountAll({
       distinct: true,
       col: "id",

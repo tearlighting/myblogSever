@@ -20,8 +20,8 @@ class BlogTranslationService {
   async createBlogTranslation({ title, description, blogId, lang, markdownContent }: Pick<IBlogTranslation, "lang" | "blogId" | "title" | "description"> & { markdownContent: string }) {
     try {
       const { toc, htmlContent } = handleMarkdown(markdownContent)
-      await blogTranslationDaoInstance.createBlogTranslation({ toc, htmlContent, title, description, blogId, lang })
-      return true
+      const row = await blogTranslationDaoInstance.createBlogTranslation({ toc, htmlContent, title, description, blogId, lang })
+      return row.toJSON()
     } catch (e) {
       throw e
     }
