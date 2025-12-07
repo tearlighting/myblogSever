@@ -1,5 +1,5 @@
-import { messageDaoInstance } from "@/dao/message/BlogMessageDao"
-import { messageServiceInstance } from "@/service/messageService"
+import { siteMessageDaoInstance as messageDaoInstance } from "@/dao/message/SiteMessageDao"
+import { messageServiceInstance } from "@/service/message"
 
 const message: Partial<IBlogMessage> = {
   nickName: "nickName",
@@ -71,6 +71,7 @@ const messages = ["ようやっと作り終えたか", "頑張ったな", "不�
 export const initMessage = () => {
   setTimeout(() => {
     messages.map((m, i) => {
+      //@ts-ignore
       messageDaoInstance.addMessage({
         nickName: "mock",
         content: m,

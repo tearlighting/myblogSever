@@ -3,7 +3,7 @@ import { useReadMD } from "@/hooks/useReaderMarkDown"
 import markdownit from "markdown-it"
 import anchor from "markdown-it-anchor"
 import { useMDTOC } from "@/hooks/useMarkDownToc"
-import { blogServiceInstance } from "@/service/blogService"
+import { blogServiceInstance } from "@/service/blog/BlogService"
 
 // const { reader, write2File } = useReadMD(path.resolve(__dirname, "../client/md/css3.md"))
 

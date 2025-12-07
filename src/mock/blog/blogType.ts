@@ -58,7 +58,7 @@ const blogTypes: Array<Partial<IBlogType>> = [
   },
 ]
 
-import { blogTypeServiceInstance } from "@/service/blogService"
+import { blogTypeServiceInstance } from "@/service/blog/BlogTypeService"
 
 function initBlogTypes() {
   blogTypeServiceInstance.updateBlogTypes(blogTypes as any)

@@ -1,2 +1,2 @@
-export * from "./projectDao"
+export * from "./ProjectDao"
 export * from "./ProjectTranslationDao"
