@@ -1,9 +1,9 @@
-import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
-import { BlogObjectValidate, BlogPagenation } from "../validate/blog"
 import { blogDaoInstance, blogTypeDaoInstance } from "@/dao/blog"
-import { ValidateError } from "@/utils/errorHelper"
-import { string2Toc } from "@/utils/custom/toc"
+import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
 import { string2HtmlContent } from "@/utils/custom/htmlContent"
+import { string2Toc } from "@/utils/custom/toc"
+import { ValidateError } from "@/utils/errorHelper"
+import { BlogObjectValidate, BlogPagenation } from "../validate/blog"
 
 class BlogService {
   @FuncIntercepter()
@@ -129,6 +129,7 @@ class BlogService {
           name: category.name,
         },
         translations,
+        createDate: res.createdAt.toISOString(),
       }
       return result
     } catch (e) {
