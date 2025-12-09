@@ -1,9 +1,9 @@
-import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
-import { ProjectObjectValidate, ProjectPagenation } from "../validate/project"
 import { projectDaoInstance } from "@/dao/project"
-import { UnknownError, ValidateError } from "@/utils/errorHelper"
-import { string2Toc } from "@/utils/custom/toc"
+import { FuncIntercepter, ParamType } from "@/hooks/useClassFunIntercepter"
 import { string2HtmlContent } from "@/utils/custom/htmlContent"
+import { string2Toc } from "@/utils/custom/toc"
+import { UnknownError, ValidateError } from "@/utils/errorHelper"
+import { ProjectObjectValidate, ProjectPagenation } from "../validate/project"
 
 class ProjectService {
   @FuncIntercepter()
@@ -65,6 +65,7 @@ class ProjectService {
         scanNumber,
         commentNumber,
         translations,
+        createDate: res.createdAt.toISOString(),
       }
     } catch (e) {
       throw e

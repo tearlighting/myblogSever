@@ -1,5 +1,5 @@
-import { Project, ProjectTranslation } from "../models"
 import { ProjectPagenation } from "@/service/validate/project"
+import { Project, ProjectTranslation } from "../models"
 
 class ProjectDao {
   async getPagenationProjects({ page, limit }: ProjectPagenation) {
@@ -11,7 +11,7 @@ class ProjectDao {
       where: {
         isValid: "Y",
       },
-      order: [["updatedAt", "DESC"]],
+      order: [["createdAt", "DESC"]],
       include: [
         {
           model: ProjectTranslation,

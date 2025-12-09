@@ -9,8 +9,8 @@ class BlogDao {
       ...(!id
         ? {}
         : {
-            id,
-          }),
+          id,
+        }),
     })
 
     return Blog.findAndCountAll({
@@ -28,8 +28,8 @@ class BlogDao {
             ...(!id
               ? {}
               : {
-                  id,
-                }),
+                id,
+              }),
           },
         },
         {
@@ -43,7 +43,7 @@ class BlogDao {
       ],
       offset: (+page - 1) * +limit,
       limit: +limit,
-      order: [["updatedAt", "DESC"]],
+      order: [["createdAt", "DESC"]],
     })
   }
   async createBlog({ blogTypeId: blogTypeId, scanNumber, commentNumber, thumb }: Omit<IBlog, keyof IBaseModel | "isValid">) {
